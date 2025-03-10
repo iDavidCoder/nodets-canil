@@ -12,16 +12,12 @@ server.set('view engine', 'mustache');
 server.set('views', path.join(__dirname, 'views'));
 server.engine('mustache', mustache());
 
+server.use(express.static(path.join(__dirname, '../public')));
 server.use(mainRoutes);
 
 server.use((req, res) => {
-    res.send('Pagina não encontrada.')
+    res.render('pages/404');
 })
 
-server.use(express.static(path.join(__dirname, '../public')));
-
-server.get('/teste', (req, res) => {
-    res.json({sucess: 'oi'});
-})
 
 server.listen(process.env.PORT, () => { console.log(`Server is Running in Port ${process.env.PORT}`)});
