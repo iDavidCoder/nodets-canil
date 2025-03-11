@@ -9,3 +9,6 @@ Projeto NodeTS - Canil
 
 ### Execute para iniciar:
 `npm run start-dev`
+
+### Environment
+`PORT=OPCIONAL`
